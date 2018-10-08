@@ -33,14 +33,34 @@ public class Student {
         return examscores.size();
     }
 
-    public String getExamScores(){
+    public void getExamScores(){
         for (double x:examscores) {
-            System.out.println("exam " + x + " -> " + examscores[x]);
+            System.out.println("exam " + x + " -> " + examscores.toArray());
         }
-        return null;
     }
 
-    public double addExamScore(double examScore){
-        
+    public void addExamScore(double examScore){
+        examscores.add(0, examScore);
+    }
+
+    public void setExamScore(int examNumber, double newScore){
+        examscores.set(examNumber, newScore);
+    }
+
+    public double getAverageExamScore(){
+        double sum = 0;
+        for (double i :examscores) {
+            sum += i;
+        }
+        return sum / examscores.size();
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", examscores=" + examscores +
+                '}';
     }
 }
