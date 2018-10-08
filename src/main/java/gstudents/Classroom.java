@@ -34,7 +34,7 @@ public class Classroom {
     public void removeStudent(String firstName, String lastName){
         Student student;
         for (int x = 0; x < 30; x++) {
-            if (firstName == student.getFirstName()) && (lastName == student.getLastName()) {
+            if ((firstName == student.getFirstName()) && (lastName == student.getLastName())) {
                 students[x] = null;
             }
         }
